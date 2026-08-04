@@ -1,17 +1,23 @@
-import { UserRound } from "lucide-react";
-import { ImagePlaceholder } from "@/components/ui/image-placeholder";
+import Image from "next/image";
 import { Reveal } from "@/components/ui/reveal";
+import thiagoPhoto from "@/assets/thiago-minha-historia.jpg";
 
 export function Story() {
   return (
     <section id="sobre" className="py-24 sm:py-32">
       <div className="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-[0.85fr_1fr] lg:items-start lg:gap-20 lg:px-10">
         <Reveal direction="left" className="lg:sticky lg:top-32">
-          <ImagePlaceholder
-            icon={UserRound}
-            label="Fotografia — Thiago, fundador da comunidade"
-            className="aspect-[4/5] w-full"
-          />
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.75rem] shadow-[0_40px_80px_-40px_rgba(46,36,28,0.3)]">
+            <Image
+              src={thiagoPhoto}
+              alt="Thiago, fundador da comunidade, de braços abertos observando a natureza"
+              fill
+              placeholder="blur"
+              sizes="(min-width: 1024px) 40vw, 90vw"
+              className="object-cover"
+              priority={false}
+            />
+          </div>
         </Reveal>
 
         <div>
