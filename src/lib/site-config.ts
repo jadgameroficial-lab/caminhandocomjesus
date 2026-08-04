@@ -10,8 +10,7 @@ export const siteConfig = {
   ],
   cta: "Quero participar",
   contact: {
-    whatsapp: "https://wa.me/5500000000000",
-    instagram: "https://instagram.com/lendocomjesus",
-    email: "ola@lendocomjesus.com.br",
+    whatsapp: "https://chat.whatsapp.com/BkAViJUQzlt2w3DVpRnVaF?s=cl&p=a&mlu=4",
+    instagram: "https://www.instagram.com/_boasnovascomjesus/",
   },
 } as const;

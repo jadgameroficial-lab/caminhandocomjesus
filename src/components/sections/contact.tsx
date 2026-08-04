@@ -1,4 +1,4 @@
-import { Camera, Mail, MessageCircle, ArrowUpRight } from "lucide-react";
+import { Camera, MessageCircle, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
 import { siteConfig } from "@/lib/site-config";
 
@@ -14,12 +14,6 @@ const channels = [
     label: "Instagram",
     detail: "Acompanhe nosso dia a dia",
     href: siteConfig.contact.instagram,
-  },
-  {
-    icon: Mail,
-    label: "E-mail",
-    detail: siteConfig.contact.email,
-    href: `mailto:${siteConfig.contact.email}`,
   },
 ];
 
@@ -38,7 +32,7 @@ export function Contact() {
           </Reveal>
         </div>
 
-        <div className="mt-14 grid gap-4 sm:grid-cols-3">
+        <div className="mx-auto mt-14 grid max-w-2xl gap-4 sm:grid-cols-2">
           {channels.map((channel, i) => (
             <Reveal key={channel.label} delay={i * 0.06}>
               <a

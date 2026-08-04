@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BookOpen, Camera, Mail, MessageCircle } from "lucide-react";
+import { BookOpen, Camera, MessageCircle } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import { VerseMark } from "@/components/ui/verse-mark";
 
@@ -61,15 +61,6 @@ export function Footer() {
                 >
                   <Camera className="h-4 w-4" strokeWidth={1.5} />
                   Instagram
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`mailto:${siteConfig.contact.email}`}
-                  className="inline-flex items-center gap-2.5 text-sm text-canvas/70 transition-colors hover:text-canvas"
-                >
-                  <Mail className="h-4 w-4" strokeWidth={1.5} />
-                  {siteConfig.contact.email}
                 </a>
               </li>
             </ul>

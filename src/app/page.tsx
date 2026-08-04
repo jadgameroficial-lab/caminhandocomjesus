@@ -8,6 +8,7 @@ import { Studies } from "@/components/sections/studies";
 import { Community } from "@/components/sections/community";
 import { Faq } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
+import { FloatingButtons } from "@/components/ui/floating-buttons";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <FloatingButtons />
     </>
   );
 }
