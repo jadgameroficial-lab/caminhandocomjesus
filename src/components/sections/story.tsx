@@ -5,8 +5,8 @@ import { Reveal } from "@/components/ui/reveal";
 export function Story() {
   return (
     <section id="sobre" className="py-24 sm:py-32">
-      <div className="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-[0.85fr_1fr] lg:items-center lg:gap-20 lg:px-10">
-        <Reveal direction="left">
+      <div className="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-[0.85fr_1fr] lg:items-start lg:gap-20 lg:px-10">
+        <Reveal direction="left" className="lg:sticky lg:top-32">
           <ImagePlaceholder
             icon={UserRound}
             label="Fotografia — Thiago, fundador da comunidade"
@@ -26,20 +26,47 @@ export function Story() {
           <Reveal delay={0.16}>
             <div className="mt-7 space-y-5 text-[1.02rem] leading-relaxed text-umber">
               <p>
-                Por muito tempo, ler a Bíblia sozinho foi algo que eu
-                começava com entusiasmo e abandonava poucas semanas depois.
-                Faltava constância — e, principalmente, faltava companhia.
+                Sou apaixonado por programação e futebol. Durante muito tempo
+                vivi do meu jeito, fazendo minhas próprias escolhas e correndo
+                atrás dos meus sonhos. Eu tinha liberdade para fazer tudo o
+                que queria, mas, mesmo assim, existia um vazio que eu não
+                conseguia explicar. Faltava propósito. Faltava paz. Parecia
+                que, por mais que eu tentasse seguir em frente, sempre havia
+                algo fora do lugar.
               </p>
               <p>
-                Quando comecei a compartilhar essa jornada com outras
-                pessoas, tudo mudou. A leitura deixou de ser uma tarefa
-                solitária e virou um encontro semanal de aprendizado,
-                perguntas sinceras e orações compartilhadas.
+                Tudo começou a mudar em um culto. Naquele dia, Deus falou
+                profundamente ao meu coração e me concedeu uma visão que
+                transformou completamente a maneira como eu enxergava a vida.
+                A partir daquele momento, entendi que Jesus me chamava para
+                viver algo muito maior do que os meus próprios planos.
               </p>
               <p>
-                Foi assim que nasceu esta comunidade: um espaço simples,
-                acolhedor e sem pressa, para caminharmos juntos rumo a Jesus,
-                uma página de cada vez.
+                Foi então que tomei a decisão mais importante da minha vida:
+                apostar todas as minhas fichas em Jesus.
+              </p>
+              <p>
+                Desde esse dia, minha caminhada não tem sido perfeita, mas
+                tem sido transformadora. A cada novo dia descubro que
+                caminhar com Cristo muda a forma como enxergamos a vida e nos
+                dá uma certeza que nunca mais abandonei: com Jesus, nunca
+                estamos sozinhos e, para aquele que crê, todas as coisas são
+                possíveis.
+              </p>
+              <p>
+                Essa comunidade nasceu desse desejo. Quero reunir pessoas que
+                também desejam crescer na fé, conhecer mais a Palavra de Deus
+                e viver o Evangelho no dia a dia. Não importa se você está
+                começando agora ou se já caminha com Cristo há muitos anos.
+                Aqui teremos um lugar para aprender, compartilhar, orar e
+                fortalecer uns aos outros, sempre com Jesus no centro de
+                tudo.
+              </p>
+              <p>
+                Se você sente que Deus tem algo maior para a sua vida ou
+                simplesmente deseja conhecê-Lo mais, saiba que será muito
+                bem-vindo. Vamos caminhar juntos, um passo de cada vez,
+                sempre com Cristo à frente.
               </p>
             </div>
           </Reveal>
