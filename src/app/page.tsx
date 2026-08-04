@@ -6,7 +6,6 @@ import { Story } from "@/components/sections/story";
 import { HowItWorks } from "@/components/sections/how-it-works";
 import { Studies } from "@/components/sections/studies";
 import { Community } from "@/components/sections/community";
-import { Cta } from "@/components/sections/cta";
 import { Faq } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
 
@@ -21,7 +20,6 @@ export default function Home() {
         <HowItWorks />
         <Studies />
         <Community />
-        <Cta />
         <Faq />
         <Contact />
       </main>

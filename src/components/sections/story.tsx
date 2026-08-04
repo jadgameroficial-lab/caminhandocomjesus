@@ -59,21 +59,6 @@ export function Story() {
                 estamos sozinhos e, para aquele que crê, todas as coisas são
                 possíveis.
               </p>
-              <p>
-                Essa comunidade nasceu desse desejo. Quero reunir pessoas que
-                também desejam crescer na fé, conhecer mais a Palavra de Deus
-                e viver o Evangelho no dia a dia. Não importa se você está
-                começando agora ou se já caminha com Cristo há muitos anos.
-                Aqui teremos um lugar para aprender, compartilhar, orar e
-                fortalecer uns aos outros, sempre com Jesus no centro de
-                tudo.
-              </p>
-              <p>
-                Se você sente que Deus tem algo maior para a sua vida ou
-                simplesmente deseja conhecê-Lo mais, saiba que será muito
-                bem-vindo. Vamos caminhar juntos, um passo de cada vez,
-                sempre com Cristo à frente.
-              </p>
             </div>
           </Reveal>
         </div>

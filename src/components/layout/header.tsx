@@ -56,7 +56,7 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button href="#inscricao" className="!px-6 !py-2.5 text-[0.8rem]">
+          <Button href="#contato" className="!px-6 !py-2.5 text-[0.8rem]">
             {siteConfig.cta}
           </Button>
         </div>
@@ -86,7 +86,7 @@ export function Header() {
               </Link>
             ))}
           </nav>
-          <Button href="#inscricao" className="mt-4 w-full" >
+          <Button href="#contato" className="mt-4 w-full" >
             {siteConfig.cta}
           </Button>
         </div>

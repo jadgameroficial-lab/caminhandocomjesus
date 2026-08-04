@@ -1,7 +1,7 @@
-import { BookOpen } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ImagePlaceholder } from "@/components/ui/image-placeholder";
 import { Reveal } from "@/components/ui/reveal";
+import heroBiblia from "@/assets/hero-biblia.jpg";
 
 export function Hero() {
   return (
@@ -41,7 +41,7 @@ export function Hero() {
 
           <Reveal delay={0.24}>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <Button href="#inscricao">Quero participar</Button>
+              <Button href="#contato">Quero participar</Button>
               <Button href="#como-funciona" variant="secondary">
                 Como funciona
               </Button>
@@ -50,11 +50,17 @@ export function Hero() {
         </div>
 
         <Reveal direction="right" delay={0.15}>
-          <ImagePlaceholder
-            icon={BookOpen}
-            label="Fotografia — Bíblia aberta à luz da janela, com café"
-            className="aspect-[4/5] w-full shadow-[0_40px_80px_-40px_rgba(46,36,28,0.35)] sm:aspect-[5/6] lg:aspect-[4/5]"
-          />
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.75rem] shadow-[0_40px_80px_-40px_rgba(46,36,28,0.35)] sm:aspect-[5/6] lg:aspect-[4/5]">
+            <Image
+              src={heroBiblia}
+              alt="Bíblia aberta ao ar livre, com uma cruz de luz brilhando no céu ao amanhecer"
+              fill
+              placeholder="blur"
+              sizes="(min-width: 1024px) 45vw, 90vw"
+              className="object-cover"
+              priority
+            />
+          </div>
         </Reveal>
       </div>
     </section>
