@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+:root {
+  /* Palette — warm linen paper, deep umber ink, soft aged gold */
+  --color-canvas: #faf6ef;
+  --color-canvas-deep: #f2ead9;
+  --color-paper: #ffffff;
+  --color-ink: #2e241c;
+  --color-umber: #6b5a48;
+  --color-umber-soft: #9c8b78;
+  --color-gold: #a9834f;
+  --color-gold-deep: #8a6a3d;
+  --color-line: #e6ddc9;
+  --color-brown-deep: #35281d;
+}
+
+@theme inline {
+  --color-canvas: var(--color-canvas);
+  --color-canvas-deep: var(--color-canvas-deep);
+  --color-paper: var(--color-paper);
+  --color-ink: var(--color-ink);
+  --color-umber: var(--color-umber);
+  --color-umber-soft: var(--color-umber-soft);
+  --color-gold: var(--color-gold);
+  --color-gold-deep: var(--color-gold-deep);
+  --color-brown-deep: var(--color-brown-deep);
+  --color-line: var(--color-line);
+
+  --font-display: "Fraunces Variable", ui-serif, Georgia, serif;
+  --font-body: "Manrope Variable", ui-sans-serif, system-ui, sans-serif;
+
+  --animate-fade-up: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  background: var(--color-canvas);
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold-deep);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* eyebrow / label styling used throughout as the site's structural voice */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold-deep);
+}
+
+/* subtle warm paper grain, used sparingly on hero + placeholders */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
