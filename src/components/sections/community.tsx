@@ -7,6 +7,7 @@ import {
   Sprout,
 } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
+import { VerseMark } from "@/components/ui/verse-mark";
 
 const pillars = [
   {
@@ -76,6 +77,17 @@ export function Community() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={0.1}>
+          <div className="mx-auto mt-16 max-w-2xl border-t border-line/70 pt-14 text-center">
+            <VerseMark
+              size="md"
+              className="mx-auto justify-center text-left"
+              verse="Onde estiverem dois ou três reunidos em meu nome, ali estou no meio deles."
+              reference="Mateus 18:20"
+            />
+          </div>
+        </Reveal>
       </div>
     </section>
   );

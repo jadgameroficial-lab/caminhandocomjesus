@@ -54,18 +54,32 @@ export function Faq() {
                   type="button"
                   onClick={() => setOpen(isOpen ? null : i)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-6 py-6 text-left"
+                  className="group flex w-full items-center justify-between gap-6 py-6 text-left"
                 >
-                  <span className="font-display text-lg text-ink sm:text-xl">
+                  <span
+                    className={cn(
+                      "font-display text-lg transition-colors duration-300 sm:text-xl",
+                      isOpen ? "text-gold-deep" : "text-ink group-hover:text-gold-deep"
+                    )}
+                  >
                     {item.q}
                   </span>
-                  <Plus
+                  <span
                     className={cn(
-                      "h-4 w-4 shrink-0 text-gold-deep transition-transform duration-300",
-                      isOpen && "rotate-45"
+                      "flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-colors duration-300",
+                      isOpen
+                        ? "border-gold-deep/40 bg-canvas-deep/60"
+                        : "border-line/70 group-hover:border-gold-deep/30"
                     )}
-                    strokeWidth={2}
-                  />
+                  >
+                    <Plus
+                      className={cn(
+                        "h-3.5 w-3.5 text-gold-deep transition-transform duration-300 ease-out",
+                        isOpen && "rotate-45"
+                      )}
+                      strokeWidth={2}
+                    />
+                  </span>
                 </button>
                 <div
                   className={cn(

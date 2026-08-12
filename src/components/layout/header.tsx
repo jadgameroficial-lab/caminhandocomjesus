@@ -25,6 +25,11 @@ export function Header() {
     };
   }, [open]);
 
+  // The hero sits behind the header as a dark cinematic film, so the
+  // header starts light-on-dark and only becomes a solid paper bar once
+  // the visitor has scrolled onto lighter sections below it.
+  const dark = scrolled || open;
+
   return (
     <header
       className={cn(
@@ -37,9 +42,18 @@ export function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
         <Link
           href="#inicio"
-          className="flex items-center gap-2.5 font-display text-[1.05rem] tracking-tight text-ink"
+          className={cn(
+            "flex items-center gap-2.5 font-display text-[1.05rem] tracking-tight transition-colors duration-300",
+            dark ? "text-ink" : "text-canvas"
+          )}
         >
-          <BookOpen className="h-4 w-4 text-gold-deep" strokeWidth={1.5} />
+          <BookOpen
+            className={cn(
+              "h-4 w-4 transition-colors duration-300",
+              dark ? "text-gold-deep" : "text-gold-light"
+            )}
+            strokeWidth={1.5}
+          />
           <span>{siteConfig.name}</span>
         </Link>
 
@@ -48,7 +62,12 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-[0.85rem] font-medium text-umber transition-colors hover:text-ink"
+              className={cn(
+                "text-[0.85rem] font-medium transition-colors duration-300",
+                dark
+                  ? "text-umber hover:text-ink"
+                  : "text-canvas/80 hover:text-canvas"
+              )}
             >
               {item.label}
             </Link>
@@ -56,7 +75,13 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button href="#contato" className="!px-6 !py-2.5 text-[0.8rem]">
+          <Button
+            href="#contato"
+            className={cn(
+              "!px-6 !py-2.5 text-[0.8rem] transition-colors duration-300",
+              !dark && "!bg-canvas !text-ink hover:!bg-white"
+            )}
+          >
             {siteConfig.cta}
           </Button>
         </div>
@@ -66,7 +91,10 @@ export function Header() {
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Fechar menu" : "Abrir menu"}
           aria-expanded={open}
-          className="flex h-9 w-9 items-center justify-center rounded-full text-ink lg:hidden"
+          className={cn(
+            "flex h-9 w-9 items-center justify-center rounded-full transition-colors duration-300 lg:hidden",
+            dark ? "text-ink" : "text-canvas"
+          )}
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
@@ -86,7 +114,7 @@ export function Header() {
               </Link>
             ))}
           </nav>
-          <Button href="#contato" className="mt-4 w-full" >
+          <Button href="#contato" className="mt-4 w-full">
             {siteConfig.cta}
           </Button>
         </div>

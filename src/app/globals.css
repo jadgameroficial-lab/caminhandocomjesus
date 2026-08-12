@@ -12,6 +12,8 @@
   --color-gold-deep: #8a6a3d;
   --color-line: #e6ddc9;
   --color-brown-deep: #35281d;
+  --color-abyss: #14100b;
+  --color-gold-light: #d9b878;
 }
 
 @theme inline {
@@ -25,11 +27,14 @@
   --color-gold-deep: var(--color-gold-deep);
   --color-brown-deep: var(--color-brown-deep);
   --color-line: var(--color-line);
+  --color-abyss: var(--color-abyss);
+  --color-gold-light: var(--color-gold-light);
 
   --font-display: "Fraunces Variable", ui-serif, Georgia, serif;
   --font-body: "Manrope Variable", ui-sans-serif, system-ui, sans-serif;
 
   --animate-fade-up: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  --animate-drift: drift 12s ease-in-out infinite;
 
   @keyframes fade-up {
     from {
@@ -39,6 +44,16 @@
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  @keyframes drift {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
     }
   }
 }
@@ -90,6 +105,51 @@ body {
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-gold-deep);
+}
+
+/* the beam — recurring signature motif echoing the light breaking through
+   the storm in the hero film. used sparingly as a transitional accent. */
+.beam {
+  position: relative;
+  width: 1px;
+  height: 4.5rem;
+  margin-inline: auto;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--color-gold) 45%,
+    transparent
+  );
+}
+
+.beam::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  transform: translateX(-50%);
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--color-gold) 55%, transparent) 0%,
+    transparent 70%
+  );
+  filter: blur(6px);
+}
+
+/* cinematic overlay for the hero film — deepens toward the base of the
+   frame so the type stays legible without flattening the image */
+.hero-scrim {
+  background:
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-abyss) 55%, transparent) 0%,
+      color-mix(in srgb, var(--color-abyss) 15%, transparent) 32%,
+      color-mix(in srgb, var(--color-abyss) 35%, transparent) 68%,
+      color-mix(in srgb, var(--color-abyss) 88%, transparent) 100%
+    );
 }
 
 /* subtle warm paper grain, used sparingly on hero + placeholders */
